@@ -1,0 +1,30 @@
+{
+  "name": "nddbase",
+  "version": "1.0.0",
+  "description": "ndd wordpress theme",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "dev": "wp-scripts start",
+    "devFast": "wp-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wp",
+    "wordpress",
+    "theme",
+    "ndd"
+  ],
+  "author": "Pedro Matias",
+  "license": "ISC",
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1",
+    "@wordpress/scripts": "*",
+    "axios": "^0.23.0"
+  },
+  "bugs": {
+    "url": "https://github.com/matias2018/frdl/issues"
+  },
+  "homepage": "https://github.com/matias2018/frdl"
+}

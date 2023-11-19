@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- <html <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/6009f650f5.js" crossorigin="anonymous"></script>
+  
+	<?php wp_head(); ?>
+</head>
+<body <?php body_class(); ?> >
+
+<nav class="main-nav">
+  <div class="nav-brand">
+    <a href="/">
+      <img id="logo-nav" src="<?= get_theme_file_uri('/images/logos/Logo_frdl_white.png'); ?>" alt="">
+    </a>
+  </div>
+  <div class="nav-items">
+    <a class="nav-item" href="about">Sobre nós</a>
+    <a class="nav-item" href="applications">Candidaturas</a>
+    <a class="nav-item" href="work">Obras</a>
+    <a class="nav-item" href="news">Notícias</a>
+    <a class="nav-item" href="contacts">Contactos</a>
+    <a class="nav-item" href="contacts">Contactos</a>
+  </div>
+</nav>
+ -->

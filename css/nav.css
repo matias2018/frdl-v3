@@ -1,0 +1,358 @@
+/* navbar */
+
+.navbar {
+  position: relative;
+  z-index: 15;
+  background-color: var(--new-bright-color);
+  height: 13rem;
+  transition: all 0.3s;
+  padding: 20px 0;
+}
+
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+}
+
+.custom-logo {
+  height: 135px;
+  padding: 20px 0 20px 0;
+  transition: all .3s;
+}
+
+.navbar--logo .logo {
+  height: 100px;
+}
+
+@media screen and (max-width: 991px) {
+  .logo,
+  .custom-logo {
+    height: 135px;
+    padding: 20px 0 20px 0;
+  }
+}
+
+.custom-logo-link {
+  display: inline-block;
+  height: 50%;
+}
+
+.custom-logo-link .custom-logo {
+  display: block;
+  max-height: 50%;
+  width: auto;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #000;
+}
+
+.navbar .flex {
+  justify-content: space-between;
+}
+
+.navbar li {
+  margin-right: 1rem;
+  font-weight: 500;
+  color: #fee;
+  transition: all .3s;
+}
+
+.nav-items {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.navbar li:not(:last-child) {
+  margin-right: 35px;
+}
+
+.navbar li:not(:last-child)::after,
+.navbar-footer-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #000;
+  transition: all .3s;
+}
+
+/* solving a bug with a span inside a p */
+span.knowMoreBtn {
+  position: relative;
+  transform: translateY(142px);
+}
+
+.blueNavbar li:not(:last-child)::after {
+  background: #fff;
+}
+
+.navbar li:hover,
+.navbar-footer-item:hover {
+  color: #000;
+}
+
+.blueNavbar li:hover {
+  color: #fff;
+}
+
+.knowMoreBtn:hover::after,
+.navbar li:hover::after,
+.navbar-footer-item:hover::after {
+  width: 100%;
+}
+
+.navbar li.nav-item.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+.blueNavbar li.nav-item.active::after {
+  background: #fff;
+}
+
+.blueNavbar {
+  background-color: var(--primary-color);
+}
+
+.blueNavbar a {
+  color: #fff;
+}
+
+/* mobile menu */
+@media(max-width: 1024px) {
+
+  .navbar {
+    height: 100px !important;
+  }
+
+  .navbar a {
+    color: #fff;
+  }
+  .navbar .flex {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+   /* burger-menu */
+   .burger-menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    transform: translate(-100%, 100%);
+    z-index: 20;
+  }
+
+  .burger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+    transition: all .3s;
+    position: relative;
+  }
+  .opened .bar,
+  .blueNavbar .burger-menu .bar {
+    background-color: #fff;
+  }
+
+  .burger-menu.opened .bar:nth-child(1) {
+    animation: ease .7s top forwards;
+  }
+  .burger-menu .bar:nth-child(1) {
+    animation: ease .7s top-2 forwards;
+  }
+
+  .burger-menu.opened .bar:nth-child(2) {
+    animation: ease .7s scaled forwards;
+  }
+  .burger-menu .bar:nth-child(2) {
+    animation: ease .7s scaled-2 forwards;
+  }
+
+  .burger-menu.opened .bar:nth-child(3) {
+    animation: ease .7s bottom forwards;
+  }
+  .burger-menu .bar:nth-child(3) {
+    animation: ease .7s bottom-2 forwards;
+  }
+
+  @keyframes top {
+    0% {
+      top: 0;
+      transform: rotate(0);
+    }
+    50% {
+      top: 7px;
+      transform: rotate(0);
+    }
+    100% {
+      top: 7px;
+      transform: rotate(45deg);
+    }
+  }
+  
+  @keyframes top-2 {
+    0% {
+      top: 11px;
+      transform: rotate(45deg);
+    }
+    50% {
+      top: 11px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 0;
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes bottom {
+    0% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+    50% {
+      bottom: 11px;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 11px;
+      transform: rotate(135deg);
+    }
+  }
+  
+  @keyframes bottom-2 {
+    0% {
+      bottom: 11px;
+      transform: rotate(135deg);
+    }
+    50% {
+      bottom: 11px;
+      transform: rotate(0);
+    }
+    100% {
+      bottom: 0;
+      transform: rotate(0);
+    }
+  }
+  
+  @keyframes scaled {
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  
+  @keyframes scaled-2 {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .navbar-desktop {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    z-index: 15;
+    transition: all 0.3s;
+  }
+  .navbar-desktop::before {
+    content:'Fundo Rainha D. Leonor';
+    position: absolute;
+    top: 308px;
+    left: -210px;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: bold;
+    line-height: 5rem;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, .07);
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    padding: 0;
+  }
+
+  
+
+  .nav-items {
+    flex-direction: column;
+  }
+
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    padding: 70px 20%;
+    background-color: rgba(0, 0, 0, 1);
+    /* background: linear-gradient(to right, green, black); */
+    height: 100vh;
+  }
+
+  .navbar li {
+    width: 100%;
+    text-align: left;
+    padding: 2rem 0;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fee;
+    transition: all .3s;
+  }
+
+  .navbar li:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  .navbar li.nav-item.active * {
+    color: var(--primary-color)
+  }
+
+  .navbar li.nav-item.active::after {
+    content: '';
+    display: none;
+  }
+
+}
+
+.transparentArrow {
+  display: none;
+}
+
+/* test */
+/* * {
+  background: rgba(255, 0, 0, .1) !important;
+} */
