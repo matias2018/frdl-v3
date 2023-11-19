@@ -425,6 +425,7 @@ add_filter('ai1wm_exclude_content_from_export', function($exclude_filters) {
       '.git',               // Exclude the .git directory
       '.DS_Store',          // Exclude .DS_Store files
       '.vscode',            // Exclude .vscode directory
+      'ai1wm-backups',            // Exclude your own backups directory
       'header-dynamic.php'  // Exclude specific PHP file (header-dynamic.php)
       // Add more folders/files here if needed
   ];

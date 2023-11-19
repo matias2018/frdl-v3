@@ -84,10 +84,6 @@ get_header();
                 <p>
                   Entende-se por Inovação Social uma nova ideia - bem, serviço ou modelo - que satisfaça uma necessidade social de forma mais eficiente, eficaz ou sustentável do que as soluções existentes.
                 </p>
-                <p>
-                  <strong>Receção da documentação, devidamente instruída, até 31 de março.</strong>
-                </p>
-                <div class="btn-container">
                 <?php
                   $file = get_field('inscricoes_area-social');
                   $filename = get_field('inscricoes_area-social_name');
@@ -96,12 +92,17 @@ get_header();
                     $title = get_the_title( $file );
                     $bytes = filesize( get_attached_file( $file ) );
                 ?>
+                  <p>
+                    <strong>Receção da documentação, devidamente instruída, até 31 de março.</strong>
+                  </p>
+                  <div class="btn-container">
                   <a href="<?php echo esc_html($url); ?>" class="download-btn">
                   Descarregar <?php echo esc_html($filename); ?> | <?php echo size_format($bytes); ?>
                   </a>
                   <?php elseif( $file == '' ): ?>
                     <span>Documentos Indisponíveis</span>
                     <br>
+                    <div class="btn-container">
                     <a href="mailto:geral@fundorainhadonaleonor.pt?subject=Site&nbsp;FRDL:&nbsp;Pedido&nbsp;de&nbsp;informação" class="uppercase cta-link"><small>Contacte-nos para mais informação</small></a>
                   <?php endif; ?>
               </div>
@@ -124,10 +125,6 @@ get_header();
                 <p>
                   As candidaturas à Recuperação de Património são avaliadas pelo FRDL do ponto de vista da legalidade; da qualidade do património, da adequação da intervenção; da sustentabilidade do investimento; e da capacidade financeira da instituição.
                 </p>
-                <p>
-                  <strong>Receção da documentação, devidamente instruída, até 31 de Março.</strong>
-                </p>
-                <div class="btn-container">
                   <?php
                     $file = get_field('inscricoes_area-patrimonio');
                     $filename = get_field('inscricoes_area-patrimonio_name');
@@ -136,13 +133,20 @@ get_header();
                       $title = get_the_title( $file );
                       $bytes = filesize( get_attached_file( $file ) );
                   ?>
+                  <p>
+                    <strong>Receção da documentação, devidamente instruída, até 31 de Março.</strong>
+                  </p>
+                  <div class="btn-container">
                     <a href="<?php echo esc_html($url); ?>" class="download-btn">
                       Descarregar <?php echo esc_html($filename); ?> | <?php echo size_format($bytes); ?>
                     </a>
+                  </div>
                     <?php elseif( $file == '' ): ?>
                       <span>Documentos Indisponíveis</span>
                       <br>
+                    <div class="btn-container">
                       <a href="mailto:geral@fundorainhadonaleonor.pt?subject=Site&nbsp;FRDL:&nbsp;Pedido&nbsp;de&nbsp;informação" class="uppercase cta-link"><small>Contacte-nos para mais informação</small></a>
+                    </div>
                   <?php endif; ?>
                 </div>
             </div>
