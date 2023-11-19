@@ -417,3 +417,21 @@ add_action('init', 'ndd_cookies');
 /* add_filter('xmlrpc_enabled', '__return_false'); */
 flush_rewrite_rules(false);
 ?>
+
+<?php
+// Add folders and files to exclude from the All-in-One WP Migration plugin
+add_filter('ai1wm_exclude_content_from_export', function($exclude_filters) {
+  $items_to_exclude = [
+      '.git',               // Exclude the .git directory
+      '.DS_Store',          // Exclude .DS_Store files
+      '.vscode',            // Exclude .vscode directory
+      'header-dynamic.php'  // Exclude specific PHP file (header-dynamic.php)
+      // Add more folders/files here if needed
+  ];
+
+  // Merge the additional folders/files with the existing exclusion list
+  $exclude_filters = array_merge($exclude_filters, $items_to_exclude);
+
+  return $exclude_filters;
+});
+?>
